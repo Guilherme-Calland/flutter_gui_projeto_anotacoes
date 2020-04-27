@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gui_projeto_anotacoes/PaginaPrincipal.dart';
+import 'package:flutter_gui_projeto_anotacoes/front/PaginaPrincipal.dart';
 
 void main(){
   runApp(MaterialApp(
