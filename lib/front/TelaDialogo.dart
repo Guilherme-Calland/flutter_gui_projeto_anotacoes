@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gui_projeto_anotacoes/back/BancoDeDadosHelper.dart';
+import 'package:flutter_gui_projeto_anotacoes/model/Anotacao.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 class TelaDialogo{
 
   static final TelaDialogo _telaDialogo = TelaDialogo._internal();
   TextEditingController _controladorTitulo = TextEditingController();
   TextEditingController _controladorDescricao = TextEditingController();
+
+  BancoDeDadosHelper _bancoDeDados = BancoDeDadosHelper();
 
   factory TelaDialogo(){
     return _telaDialogo;
@@ -58,7 +64,7 @@ class TelaDialogo{
                 ),
               ),
               onPressed: (){
-                //salvar
+                _salvarAnotacao();
                 return Navigator.pop(context);
               },
             )
@@ -66,5 +72,27 @@ class TelaDialogo{
         );
       }
     );
+  }
+
+  _salvarAnotacao() async {
+    String titulo = _controladorTitulo.text;
+    String descricao = _controladorDescricao.text;
+    String data = _formatarData ( DateTime.now().toString() );
+    Anotacao anotacao = Anotacao(titulo, descricao, data);
+    int resultado = await _bancoDeDados.create( anotacao );
+    print("item salvo, id: $resultado");
+    _controladorTitulo.clear();
+    _controladorDescricao.clear();
+  }
+
+  _formatarData(String data){
+    initializeDateFormatting('pt-Br');
+
+    var f = DateFormat.yMMMMd('pt_BR');
+
+    DateTime dataConvertida = DateTime.parse( data );
+    String dataFormatada = f.format( dataConvertida );
+
+    return dataFormatada;
   }
 }
