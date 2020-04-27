@@ -18,7 +18,6 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
   void initState(){
     super.initState();
     print('oi');
-    // listaHelper.recuperarAnotacoes();
   }
 
   @override
