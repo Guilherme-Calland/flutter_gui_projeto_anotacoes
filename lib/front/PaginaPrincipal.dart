@@ -9,22 +9,29 @@ class PaginaPrincipal extends StatefulWidget {
 }
 
 class _PaginaPrincipalState extends State<PaginaPrincipal> {
+
+  BancoDeDadosHelper bancoDeDados;
+  TelaDialogo telaDialogo;
+  ListaAnotacoesHelper listaHelper;
+  
+  @override
+  void initState(){
+    super.initState();
+    print('oi');
+    listaHelper = ListaAnotacoesHelper(bancoDeDados);
+    listaHelper.recuperarAnotacoes();
+  }
+
   @override
   Widget build(BuildContext context) {
 
-    BancoDeDadosHelper bancoDeDados = BancoDeDadosHelper();
-    TelaDialogo telaDialogo = TelaDialogo( bancoDeDados );
-    ListaAnotacoesHelper listaHelper = ListaAnotacoesHelper( bancoDeDados );
+    bancoDeDados = BancoDeDadosHelper();
+    telaDialogo = TelaDialogo(bancoDeDados);
 
     var pink = Color(0xffff8cf4);
     var green = Colors.green;
     var corTema = pink;
 
-    @override
-    void initState(){
-      super.initState();
-      listaHelper.recuperarAnotacoes();
-    }
 
     return Scaffold(
       appBar: AppBar(

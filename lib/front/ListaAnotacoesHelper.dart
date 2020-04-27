@@ -11,16 +11,12 @@ class ListaAnotacoesHelper{
     this._bancoDados = bancoDeDados;
   }
   
-  recuperarAnotacoes(){
-
-    List<Map> dados = _bancoDados.read();
-    List< Anotacao > anotacoes = List();
+  recuperarAnotacoes() async {
+    List<Map> dados = await _bancoDados.read();
     for(var map in dados){
       Anotacao anotacao = Anotacao.toAnotacao(map);
-      anotacoes.add(anotacao);
+      listaAnotacoes.add(anotacao);
     }
-
-    return anotacoes;
   }
 
   Widget mostrarLista(){
