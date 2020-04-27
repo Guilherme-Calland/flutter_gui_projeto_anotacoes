@@ -49,7 +49,7 @@ class BancoDeDadosHelper{
 
   read() async {
     var bd = await bancoDeDados;
-    String sql = "SELECT FROM * anotacoes ORDER BY data DESC";
+    String sql = "SELECT * FROM anotacoes ORDER BY data DESC";
     List anotacoes = await bd.rawQuery( sql );
     return anotacoes;
   }

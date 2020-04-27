@@ -9,7 +9,7 @@ class TelaDialogo{
 
   TextEditingController _controladorTitulo = TextEditingController();
   TextEditingController _controladorDescricao = TextEditingController();
-  BancoDeDadosHelper _bancoDeDados = BancoDeDadosHelper();
+  BancoDeDadosHelper _bancoDeDados;
 
   TelaDialogo(BancoDeDadosHelper bancoDeDados){
     this._bancoDeDados = bancoDeDados;

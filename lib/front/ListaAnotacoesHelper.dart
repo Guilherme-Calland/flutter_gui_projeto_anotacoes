@@ -12,7 +12,7 @@ class ListaAnotacoesHelper{
   }
   
   recuperarAnotacoes() async {
-    List<Map> dados = await _bancoDados.read();
+    var dados = await _bancoDados.read();
     for(var map in dados){
       Anotacao anotacao = Anotacao.toAnotacao(map);
       listaAnotacoes.add(anotacao);
