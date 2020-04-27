@@ -5,15 +5,15 @@ import 'package:flutter_gui_projeto_anotacoes/model/Anotacao.dart';
 class ListaAnotacoesHelper{
 
   List< Anotacao >listaAnotacoes = List(); 
-  BancoDeDadosHelper bancoDados;
+  BancoDeDadosHelper _bancoDados;
 
-  ListaAnotacoesHelper(BancoDeDadosHelper bd){
-    this.bancoDados = bd;
+  ListaAnotacoesHelper(BancoDeDadosHelper bancoDeDados){
+    this._bancoDados = bancoDeDados;
   }
   
   recuperarAnotacoes(){
 
-    List<Map> dados = bancoDados.read();
+    List<Map> dados = _bancoDados.read();
     List< Anotacao > anotacoes = List();
     for(var map in dados){
       Anotacao anotacao = Anotacao.toAnotacao(map);
@@ -21,6 +21,30 @@ class ListaAnotacoesHelper{
     }
 
     return anotacoes;
+  }
+
+  Widget mostrarLista(){
+
+    return Column(
+      children: <Widget>[
+        Expanded(
+          child: ListView.builder(
+            itemCount: listaAnotacoes.length,  
+            itemBuilder: (context, index){
+
+              Anotacao anotacao = listaAnotacoes[index];
+
+              return Card(
+                child: ListTile(
+                  title: Text( anotacao.titulo ),
+                  subtitle: Text( "${anotacao.data} - ${anotacao.descricao}" ),
+                )
+              );
+            }
+          )
+        )
+      ],
+    );
   }
 
 }

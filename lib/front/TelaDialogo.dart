@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gui_projeto_anotacoes/back/BancoDeDadosHelper.dart';
+import 'package:flutter_gui_projeto_anotacoes/front/ListaAnotacoesHelper.dart';
 import 'package:flutter_gui_projeto_anotacoes/model/Anotacao.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 class TelaDialogo{
 
-  static final TelaDialogo _telaDialogo = TelaDialogo._internal();
   TextEditingController _controladorTitulo = TextEditingController();
   TextEditingController _controladorDescricao = TextEditingController();
-
   BancoDeDadosHelper _bancoDeDados = BancoDeDadosHelper();
 
-  factory TelaDialogo(){
-    return _telaDialogo;
+  TelaDialogo(BancoDeDadosHelper bancoDeDados){
+    this._bancoDeDados = bancoDeDados;
   }
 
   TelaDialogo._internal(){}
 
-  exibirTelaDialogo(context){
+  exibirTelaDialogo(context,ListaAnotacoesHelper listaHelper){
     showDialog(
       context: context,
       builder: (context){
@@ -65,6 +64,7 @@ class TelaDialogo{
               ),
               onPressed: (){
                 _salvarAnotacao();
+                // listaHelper.recuperarAnotacoes();
                 return Navigator.pop(context);
               },
             )
