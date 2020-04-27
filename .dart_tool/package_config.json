@@ -74,6 +74,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/intl-0.16.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.5"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.6",
       "packageUri": "lib/",
@@ -122,6 +128,18 @@
       "languageVersion": "1.8"
     },
     {
+      "name": "sqflite",
+      "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/sqflite-1.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
+      "name": "sqflite_common",
+      "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/sqflite_common-1.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "stack_trace",
       "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.9.3",
       "packageUri": "lib/",
@@ -138,6 +156,12 @@
       "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "synchronized",
+      "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/synchronized-2.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
     },
     {
       "name": "term_glyph",
@@ -176,7 +200,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-04-26T16:45:54.511369Z",
+  "generated": "2020-04-27T12:43:19.707460Z",
   "generator": "pub",
   "generatorVersion": "2.7.2"
 }

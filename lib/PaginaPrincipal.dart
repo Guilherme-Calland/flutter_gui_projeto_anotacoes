@@ -9,8 +9,9 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
   @override
   Widget build(BuildContext context) {
 
+    var verde = Colors.green;
     var rosa = Color(0xffff8df4);
-    var corTemaApp = Colors.green;
+    var corTemaApp = rosa;
 
     return Scaffold(
       appBar: AppBar(
