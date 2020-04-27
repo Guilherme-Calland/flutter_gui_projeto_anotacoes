@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gui_projeto_anotacoes/front/TelaDialogo.dart';
 
 class PaginaPrincipal extends StatefulWidget {
   @override
@@ -8,6 +9,8 @@ class PaginaPrincipal extends StatefulWidget {
 class _PaginaPrincipalState extends State<PaginaPrincipal> {
   @override
   Widget build(BuildContext context) {
+
+    TelaDialogo telaDialogo = TelaDialogo();
 
     var pink = Color(0xffff8cf4);
     var green = Colors.green;
@@ -22,7 +25,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: corTema,
         foregroundColor: Colors.white,
-        onPressed: (){},
+        onPressed: (){ telaDialogo.exibirTelaDialogo(context); },
         child: Icon(Icons.add)
       ),
     );
