@@ -28,6 +28,7 @@ class BancoDeDadosHelper{
     final arquivo = join( dbPath, 'bancoDeDados.db');
 
     var bd = await openDatabase(arquivo, version: 1, onCreate: _inicializar);
+    return bd;
   }
 
   _inicializar(Database bd, int version) async {
@@ -35,7 +36,7 @@ class BancoDeDadosHelper{
     "id INTEGER PRIMARY KEY AUTOINCREMENT,"
     "titulo VARCHAR, "
     "descricao TEXT, "
-    "data DATETIME, "
+    "data DATETIME "
     ")";
     await bd.execute(sql);
   }
