@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gui_projeto_anotacoes/model/Anotacao.dart';
+import 'package:sqflite/sqflite.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -9,6 +13,7 @@ class _HomeState extends State<Home> {
 
   TextEditingController _controladorTitulo = TextEditingController();
   TextEditingController _controladorDescricao = TextEditingController();
+  BancoDadosAuxilio bancoDados = BancoDadosAuxilio();
 
   _mostrarTelaDialogo(){
     showDialog(
@@ -56,7 +61,7 @@ class _HomeState extends State<Home> {
                 )
               ),
               onPressed: (){
-                // salvar
+                _salvarAnotacao();
                 return Navigator.pop(context);
               },
             )
@@ -66,8 +71,26 @@ class _HomeState extends State<Home> {
     );
   }
 
+  _salvarAnotacao() async {
+    String titulo = _controladorTitulo.text;
+    String descricao = _controladorDescricao.text;
+    String data = _formatarData( DateTime.now().toString() );
+    Anotacao anotacao = Anotacao(titulo, descricao, data);
+    int resposta = await bancoDeDados.create();
+  }
+
+  _formatarData(String data){
+    initializeDateFormatting('pt-Br');
+    var f = DateFormat.yMMMMd('pt-BR');
+    DateTime dataConvertida = DateTime.parse( data );
+    String dataFormatada = f.format( dataConvertida );
+    return dataFormatada;
+  }
+
   @override
   Widget build(BuildContext context) {
+
+
 
     var corTema = Colors.blue;
 
