@@ -23,14 +23,13 @@ class ListaAnotacoesHelper{
       listaTemporaria.add(anotacao);
     }
 
-    print(listaTemporaria);
-
     listaAnotacoes = listaTemporaria;
-    print(_listaAnotacoes);
+
+    // print(_listaAnotacoes);
   }
 
   Widget mostrarLista(){
-    recuperarAnotacoes();
+    // recuperarAnotacoes();
     print(_listaAnotacoes);
     return Column(
       children: <Widget>[
