@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gui_projeto_anotacoes/front/PaginaPrincipal.dart';
+import 'package:flutter_gui_projeto_anotacoes/Home.dart';
 
 void main(){
   runApp(MaterialApp(
-    home: PaginaPrincipal(),
+    home: Home(),
     debugShowCheckedModeBanner: false,
   ));
 }
