@@ -47,4 +47,11 @@ class BancoDeDadosHelper{
     return id;
   }
 
+  read() async {
+    var bd = await bancoDeDados;
+    String sql = "SELECT FROM * anotacoes ORDER BY data DESC";
+    List<Map> anotacoes = await bd.rawQuery( sql );
+    return anotacoes;
+  }
+
 }

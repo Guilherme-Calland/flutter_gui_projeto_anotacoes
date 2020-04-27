@@ -7,6 +7,12 @@ class Anotacao{
 
   Anotacao(this._titulo, this._descricao, this._data);
 
+  Anotacao.toAnotacao(Map map){
+    this._titulo = map['titulo'];
+    this._descricao = map['descricao'];
+    this._data = map['data'];
+  }
+
   toMap(){
     Map<String, dynamic> map = { 
       'titulo' : this._titulo,
@@ -19,5 +25,6 @@ class Anotacao{
     }
     return map;
   }
+
 
 }

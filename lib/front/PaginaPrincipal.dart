@@ -21,11 +21,13 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
         title: Text("Anotacoes"),
         backgroundColor: corTema,
       ),
-      body: null,
+      // body: return ListaAnotacoes.lista
       floatingActionButton: FloatingActionButton(
         backgroundColor: corTema,
         foregroundColor: Colors.white,
-        onPressed: (){ telaDialogo.exibirTelaDialogo(context); },
+        onPressed: (){
+          telaDialogo.exibirTelaDialogo(context); 
+        },
         child: Icon(Icons.add)
       ),
     );

@@ -1,4 +1,4 @@
-#Mon Apr 27 12:54:55 BRT 2020
+#Mon Apr 27 13:52:11 BRT 2020
 base.0=/home/gui/flutter-projects/flutter_gui_projeto_anotacoes/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
