@@ -18,14 +18,14 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
   void initState(){
     super.initState();
     print('oi');
-    listaHelper = ListaAnotacoesHelper(bancoDeDados);
-    listaHelper.recuperarAnotacoes();
+    // listaHelper.recuperarAnotacoes();
   }
 
   @override
   Widget build(BuildContext context) {
 
     bancoDeDados = BancoDeDadosHelper();
+    listaHelper = ListaAnotacoesHelper(bancoDeDados);
     telaDialogo = TelaDialogo(bancoDeDados);
 
     var pink = Color(0xffff8cf4);
@@ -44,6 +44,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
         foregroundColor: Colors.white,
         onPressed: (){
           telaDialogo.exibirTelaDialogo(context, listaHelper);
+          listaHelper.recuperarAnotacoes();
         },
         child: Icon(Icons.add)
       ),

@@ -5,14 +5,14 @@ import 'package:flutter_gui_projeto_anotacoes/model/Anotacao.dart';
 class ListaAnotacoesHelper{
 
   List< Anotacao >listaAnotacoes = List(); 
-  BancoDeDadosHelper _bancoDados;
+  BancoDeDadosHelper _bancoDeDados;
 
   ListaAnotacoesHelper(BancoDeDadosHelper bancoDeDados){
-    this._bancoDados = bancoDeDados;
+    this._bancoDeDados = bancoDeDados;
   }
   
   recuperarAnotacoes() async {
-    var dados = await _bancoDados.read();
+    var dados = await _bancoDeDados.read();
     for(var map in dados){
       Anotacao anotacao = Anotacao.toAnotacao(map);
       listaAnotacoes.add(anotacao);
